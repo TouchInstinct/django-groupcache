@@ -40,10 +40,9 @@ Given a group, view keywords, and an optional view_name. You can:
 3) Invalidate the current local prefix (see bump_local_prefix()).
 """
 from django.core.cache import cache
-import hashlib
 from django.conf import settings
 
-import logging, random
+import logging, random, hashlib
 
 #-------------------------------------------------------------------------------
 logger = logging.getLogger('groupcache')  # Set up an application-level logger
