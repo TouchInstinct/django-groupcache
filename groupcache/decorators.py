@@ -107,7 +107,7 @@ def cache_page_against_model(model, cache_timeout = None, to_fields = None):
                 # ideal, as it means that *args, **kwargs style views signature
                 # will not get properly detected -- this is what might happens
                 # with views having cascading decorators.
-                modelsfields = inspect.getargspec(func)[0][1:]
+                modelfields = inspect.getargspec(func)[0][1:]
         else:
             # Other sequences and mappings only needs to be saved, as it's
             # assumed there is a perfect relationship to model fields.

@@ -40,7 +40,7 @@ Given a group, view keywords, and an optional view_name. You can:
 3) Invalidate the current local prefix (see bump_local_prefix()).
 """
 from django.core.cache import cache
-from django.utils.hashcompat import md5_constructor
+import hashlib
 from django.conf import settings
 
 import logging, random
@@ -64,7 +64,7 @@ def _join_prefixes(prefixes, terminal = ''):
         terminal)
 
 def _hash_mapping(mapping, view_name = None):
-    ctx = md5_constructor()
+    ctx = hashlib.md5()
     for k, v in sorted(mapping.iteritems()):
         ctx.update(k)
         ctx.update(v)        
